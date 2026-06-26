@@ -105,3 +105,19 @@ max-width:300px;
 }
 
 }
+nav {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
