@@ -47,6 +47,9 @@
     <p>Un whisky français aux notes fruitées, équilibré et élégant. Idéal pour l'apéritif ou la dégustation.</p>
     <p class="prix"> 20 000 FCFA</p>
     <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Whisky%20Lothaire%20Fruité." class="btn-commander">Commander</a>
+<button onclick="ajouterPanier('Whisky Lothaire Fruité', 20000)">
+    Ajouter au panier
+</button>
 </div>
 
 <div class="carte">
@@ -63,6 +66,9 @@
     <p>Vin rouge généreux aux arômes de fruits noirs et d'épices, idéal avec les viandes grillées.</p>
     <p class="prix">6500 FCFA</p>
     <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Domaine%20de%20La%20Baume%20Syrah." class="btn-commander">Commander</a>
+<button onclick="ajouterPanier('Vin Syrah', 6500)">
+    Ajouter au panier
+</button>
 </div>
 
 <div class="carte">
@@ -187,6 +193,20 @@
 </footer>
 
 <script src="script.js"></script>
+<section id="panier">
+    <h2>🛒 Mon Panier</h2>
 
+    <div class="carte">
+        <div id="liste-panier"></div>
+
+        <h3>Total : <span id="total">0</span> FCFA</h3>
+
+        <button onclick="commanderWhatsApp()">
+            Commander sur WhatsApp
+        </button>
+    </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
