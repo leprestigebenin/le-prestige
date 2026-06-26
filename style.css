@@ -151,7 +151,24 @@ header img{
     border-radius:10px;
     margin-bottom:15px;
 }
-
-.carte{
-    overflow:hidden;
+#paiement{
+    padding:60px 20px;
 }
+
+#paiement .produits{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+#paiement .carte{
+    text-align:center;
+}
+
+#paiement h3{
+    color:#d4af37;
+}
+
+
+
+        
