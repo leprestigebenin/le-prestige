@@ -106,16 +106,20 @@ max-width:300px;
 
 }
 nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-
-nav a {
+    nav a {
     color: gold;
     text-decoration: none;
-    margin: 0 15px;
+    padding: 8px 12px;
     font-size: 20px;
     font-weight: bold;
+}
 }
 
 nav a:hover {
