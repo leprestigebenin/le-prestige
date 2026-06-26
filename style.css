@@ -19,7 +19,7 @@ text-align:center;
 
 header h1{
 font-size:60px;
-color:#d4af37;
+color:white;
 margin-bottom:20px;
 }
 
@@ -29,7 +29,7 @@ margin-bottom:30px;
 }
 
 button{
-background:#d4af37;
+background:white;
 color:#111;
 border:none;
 padding:15px 35px;
@@ -52,7 +52,7 @@ margin:auto;
 
 h2{
 text-align:center;
-color:#d4af37;
+color:white;
 margin-bottom:40px;
 font-size:36px;
 }
@@ -73,11 +73,11 @@ transition:.3s;
 
 .carte:hover{
 transform:translateY(-8px);
-border-color:#d4af37;
+border-color:white;
 }
 
 .carte h3{
-color:#d4af37;
+color:white;
 margin-bottom:15px;
 }
 
