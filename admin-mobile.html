@@ -38,12 +38,20 @@
 
 <h2>Ajouter un produit</h2>
 
-<label>📷 Nom de la photo</label>
+<label>📷 Choisir une photo</label>
 
 <input
-type="text"
-id="image"
-placeholder="exemple : whisky-fruite.jpg">
+type="file"
+id="photo"
+accept="image/*"
+onchange="apercuPhoto(event)">
+
+<br><br>
+
+<img
+id="imagePreview"
+src=""
+style="display:none;width:100%;max-width:300px;border-radius:10px;">
 
 <label>🏷️ Nom du produit</label>
 
