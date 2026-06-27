@@ -569,3 +569,28 @@ border:1px solid #444;
 background:#222;
 
 }
+.btn-retour{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:12px 25px;
+
+background:#d4af37;
+
+color:black;
+
+font-weight:bold;
+
+border-radius:8px;
+
+text-decoration:none;
+
+}
+
+.btn-retour:hover{
+
+background:white;
+
+}
