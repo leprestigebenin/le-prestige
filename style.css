@@ -1,174 +1,405 @@
+/* ========================= */
+/* LE PRESTIGE */
+/* ========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-background:#111;
-color:white;
-line-height:1.6;
+    background:#111;
+    color:#fff;
+    line-height:1.6;
 }
+
+/* ========================= */
+/* ACCUEIL */
+/* ========================= */
+
 #accueil{
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("fond.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("fond.jpg");
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-size:cover;
+    background-position:center;
 
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+    min-height:100vh;
 
-header h1{
-font-size:60px;
-color:white;
-margin-bottom:20px;
-}
-
-header p{
-font-size:22px;
-margin-bottom:30px;
-}
-
-button{
-background:white;
-color:#111;
-border:none;
-padding:15px 35px;
-font-size:18px;
-border-radius:30px;
-cursor:pointer;
-transition:.3s;
-font-weight:bold;
-}
-
-button:hover{
-background:#fff;
-}
-
-section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-h2{
-text-align:center;
-color:white;
-margin-bottom:40px;
-font-size:36px;
-}
-
-.produits{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.carte{
-background:#1d1d1d;
-padding:25px;
-border-radius:15px;
-border:1px solid #5b001f;
-transition:.3s;
-}
-
-.carte:hover{
-transform:translateY(-8px);
-border-color:white;
-}
-
-.carte h3{
-color:white;
-margin-bottom:15px;
-}
-
-footer{
-background:#000;
-padding:30px;
-text-align:center;
-margin-top:40px;
-color:#ccc;
-}
-
-@media(max-width:768px){
-
-header h1{
-font-size:42px;
-}
-
-header p{
-font-size:18px;
-}
-
-button{
-width:100%;
-max-width:300px;
-}
-
-}
-nav{
-    position:absolute;
-    top:15px;
-    left:0;
-    width:100%;
     display:flex;
-    justify-content:space-evenly;
+    flex-direction:column;
+    justify-content:center;
     align-items:center;
-    flex-wrap:nowrap;
-    padding:0 5px;
+
+    text-align:center;
+
+    padding:20px;
 }
 
+.logo{
+    width:140px;
+    margin:20px 0;
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.slogan{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    gap:25px;
+
+    background:rgba(0,0,0,.90);
+
+    padding:18px;
+
+    z-index:999;
+}
 
 nav a{
+
     color:white;
+
     text-decoration:none;
-    font-size:18px;
+
     font-weight:bold;
-    padding:6px 10px;
+
+    transition:.3s;
 }
 
 nav a:hover{
+
     color:#d4af37;
 }
 
-header img{
-    width:150px;
-    margin:20px 0;
+/* ========================= */
+/* BOUTONS */
+/* ========================= */
+
+.btn,
+button,
+.btn-commander{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
 }
+
+.btn{
+
+    background:#d4af37;
+
+    color:#111;
+}
+
+.btn:hover{
+
+    background:white;
+}
+
+button{
+
+    background:#222;
+
+    color:white;
+}
+
+button:hover{
+
+    background:#d4af37;
+
+    color:#111;
+}
+
+.btn-commander{
+
+    background:#25D366;
+
+    color:white;
+}
+
+.btn-commander:hover{
+
+    background:#1ea952;
+}
+
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+
+section{
+
+    padding:70px 20px;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:38px;
+}
+
+/* ========================= */
+/* PRODUITS */
+/* ========================= */
+
+.produits{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+}
+
+.carte{
+
+    background:#1c1c1c;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+    border:1px solid #333;
+
+    transition:.3s;
+}
+
+.carte:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+}
+
 .carte img{
+
     width:100%;
-    height:300px;
+
+    height:270px;
+
     object-fit:cover;
+
     border-radius:10px;
+
     margin-bottom:15px;
 }
-#paiement{
-    padding:60px 20px;
+
+.carte h3{
+
+    margin-bottom:10px;
 }
 
-#paiement .produits{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.carte p{
+
+    color:#ddd;
 }
 
-#paiement .carte{
+.prix{
+
+    color:#d4af37;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin:15px 0;
+}
+
+/* ========================= */
+/* PANIER */
+/* ========================= */
+
+#panier .carte{
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+#liste-panier p{
+
+    padding:10px;
+
+    border-bottom:1px solid #444;
+}
+
+/* ========================= */
+/* AVIS */
+/* ========================= */
+
+#temoignages h3{
+
+    color:#d4af37;
+
+    font-size:28px;
+}
+
+/* ========================= */
+/* PAIEMENT */
+/* ========================= */
+
+#paiement h3{
+
+    color:#d4af37;
+}
+
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
+#contact{
+
     text-align:center;
 }
 
-#paiement h3{
-    color:#d4af37;
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+
+    background:#000;
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#bbb;
 }
 
+/* ========================= */
+/* WHATSAPP */
+/* ========================= */
 
+.whatsapp-float{
 
-        
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+    z-index:9999;
+
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+
+    transform:scale(1.1);
+}
+
+.whatsapp-float img{
+
+    width:38px;
+
+    height:38px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+nav{
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+h1{
+
+    font-size:42px;
+}
+
+.slogan{
+
+    font-size:18px;
+}
+
+.logo{
+
+    width:110px;
+}
+
+button,
+.btn,
+.btn-commander{
+
+    width:100%;
+}
+
+.carte img{
+
+    height:220px;
+}
+
+}
