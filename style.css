@@ -491,3 +491,17 @@ transform:scale(1.1);
     font-weight:bold;
     color:#ff4444;
 }
+/* Nos services */
+
+#services h2{
+    margin-bottom:40px;
+}
+
+#services .carte{
+    transition:0.3s;
+}
+
+#services .carte:hover{
+    transform:translateY(-8px);
+    border:2px solid #d4af37;
+}
