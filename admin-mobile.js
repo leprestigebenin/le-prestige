@@ -1,5 +1,19 @@
 function genererCode() {
+// ==========================
+// CONNEXION ADMINISTRATEUR
+// ==========================
 
+const motDePasse = "SossouYvanna272018";
+
+const saisie = prompt("🔐 Entrez le mot de passe administrateur");
+
+if (saisie !== motDePasse) {
+
+    alert("Accès refusé.");
+
+    window.location.href = "index.html";
+
+}
     const image = document.getElementById("image").value;
     const nom = document.getElementById("nom").value;
     const prix = document.getElementById("prix").value;
