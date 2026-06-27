@@ -103,3 +103,16 @@ function copierCode(){
     });
 
 }
+// ==========================
+// APERÇU DE LA PHOTO
+// ==========================
+
+function apercuPhoto(event){
+
+    const image = document.getElementById("imagePreview");
+
+    image.src = URL.createObjectURL(event.target.files[0]);
+
+    image.style.display = "block";
+
+}
