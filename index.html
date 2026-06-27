@@ -38,15 +38,34 @@ Découvrir notre collection
 </header>
 
 <section id="catalogue">
+<div class="recherche">
 
+    <input
+        type="text"
+        id="recherche"
+        placeholder="🔍 Rechercher un produit..."
+        onkeyup="rechercherProduit()">
+
+</div>
+
+<div class="categories">
+
+    <button onclick="filtrerCategorie('tous')">Tous</button>
+
+    <button onclick="filtrerCategorie('whisky')">🥃 Whiskies</button>
+
+    <button onclick="filtrerCategorie('vin')">🍷 Vins</button>
+
+    <button onclick="filtrerCategorie('coffret')">🎁 Coffrets</button>
+
+</div>
 <h2>Notre Collection</h2>
 
 <div class="produits">
 
 <!-- Whisky Fruité -->
 
-<div class="carte">
-
+<div class="carte whisky">
 <img src="whisky-fruite.jpg" alt="Whisky Fruité">
 
 <h3>Whisky Lothaire Fruité</h3>
@@ -72,7 +91,7 @@ Ajouter au panier
 
 <!-- Whisky Tourbé -->
 
-<div class="carte">
+<div class="carte whisky">
 
 <img src="whisky-tourbe.jpg" alt="Whisky Tourbé">
 
@@ -98,7 +117,7 @@ Ajouter au panier
 
 <!-- Syrah -->
 
-<div class="carte">
+<div class="carte vin">
 
 <img src="vin-syrah.jpg" alt="Syrah">
 
@@ -124,7 +143,7 @@ Ajouter au panier
 
 <!-- Sauvignon -->
 
-<div class="carte">
+<div class="carte vin">
 
 <img src="vin-sauvignon.jpg" alt="Sauvignon">
 
@@ -149,7 +168,7 @@ Ajouter au panier
 </div>
 <!-- Merlot -->
 
-<div class="carte">
+<div class="carte vin">
 
 <img src="merlot.jpg" alt="Merlot">
 
@@ -175,7 +194,7 @@ Ajouter au panier
 
 <!-- SauvTerre -->
 
-<div class="carte">
+<div class="carte vin">
 
 <img src="sauvterre.jpg" alt="SauvTerre">
 
@@ -201,8 +220,7 @@ Ajouter au panier
 
 <!-- JP Chenet -->
 
-<div class="carte">
-
+<div class="carte vin">
 <img src="jp-chenet.jpg" alt="JP Chenet">
 
 <h3>JP Chenet Réserve</h3>
@@ -227,8 +245,7 @@ Ajouter au panier
 
 <!-- Pierlant -->
 
-<div class="carte">
-
+<div class="carte vin">
 <img src="pierlant.jpg" alt="Pierlant">
 
 <h3>Pierlant Demi-Sec</h3>
@@ -253,8 +270,7 @@ Ajouter au panier
 
 <!-- Coffret Bordeaux -->
 
-<div class="carte">
-
+<div class="carte coffret">
 <img src="coffret-bordeaux.jpg" alt="Coffret Bordeaux">
 
 <h3>Coffret Dégustation Bordeaux</h3>
@@ -279,7 +295,7 @@ Ajouter au panier
 
 <!-- Coffret El Chivo -->
 
-<div class="carte">
+<div class="carte coffret">
 
 <img src="coffret-elchivo.jpg" alt="Coffret El Chivo">
 
