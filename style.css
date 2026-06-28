@@ -1,12 +1,13 @@
-/* ========================= */
-/* LE PRESTIGE */
-/* ========================= */
+/* =========================================
+   LE PRESTIGE VINS & SPIRITUEUX
+   STYLE V2
+========================================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 html{
@@ -14,669 +15,1039 @@ html{
 }
 
 body{
-    background:#111;
-    color:#fff;
-    line-height:1.6;
+    background:#0d0d0d;
+    color:#ffffff;
+    overflow-x:hidden;
 }
 
-/* ========================= */
-/* ACCUEIL */
-/* ========================= */
+/* ===========================
+   HEADER
+=========================== */
 
-#accueil{
-    background:
-    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
-    url("fond.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    padding:20px;
-}
-
-.logo{
-    width:140px;
-    margin:20px 0;
-}
-
-h1{
-    font-size:60px;
-    margin-bottom:15px;
-}
-
-.slogan{
-    font-size:22px;
-    margin-bottom:30px;
-}
-
-/* ========================= */
-/* MENU */
-/* ========================= */
-
-nav{
+.header{
 
     position:fixed;
 
     top:0;
+
     left:0;
 
     width:100%;
 
+    height:80px;
+
+    background:#111;
+
     display:flex;
-    justify-content:center;
-    gap:25px;
 
-    background:rgba(0,0,0,.90);
+    justify-content:space-between;
 
-    padding:18px;
+    align-items:center;
+
+    padding:0 40px;
 
     z-index:999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
+
 }
 
-nav a{
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:60px;
+
+}
+
+.logo-text h1{
+
+    color:#d4af37;
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+.logo-text p{
+
+    color:#ddd;
+
+    font-size:14px;
+
+}
+
+#navbar{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+#navbar a{
 
     color:white;
 
     text-decoration:none;
 
-    font-weight:bold;
+    font-weight:500;
 
     transition:.3s;
+
 }
 
-nav a:hover{
+#navbar a:hover{
 
     color:#d4af37;
+
 }
 
-/* ========================= */
-/* BOUTONS */
-/* ========================= */
+.menu-mobile{
 
-.btn,
-button,
-.btn-commander{
+    display:none;
 
-    display:inline-block;
-
-    padding:12px 25px;
-
-    margin-top:15px;
+    background:none;
 
     border:none;
 
-    border-radius:30px;
+    color:white;
+
+    font-size:30px;
 
     cursor:pointer;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    margin-top:80px;
+
+    height:550px;
+
+    background:url("hero.jpg") center center/cover;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:700px;
+
+    padding:20px;
+
+}
+
+.hero h2{
+
+    font-size:52px;
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    color:#ddd;
+
+    margin-bottom:35px;
+
+}
+
+.btn-principal{
+
+    display:inline-block;
+
+    padding:15px 40px;
+
+    border-radius:40px;
+
+    background:#d4af37;
+
+    color:#111;
 
     text-decoration:none;
 
     font-weight:bold;
 
     transition:.3s;
+
 }
 
-.btn{
+.btn-principal:hover{
+
+    background:#f2ca52;
+
+    transform:translateY(-3px);
+
+}
+/* ===========================
+   RECHERCHE
+=========================== */
+
+.zone-recherche{
+
+    padding:40px 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    background:#111;
+
+}
+
+.recherche-box{
+
+    width:100%;
+
+    max-width:700px;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.recherche-box input{
+
+    flex:1;
+
+    padding:15px 20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    outline:none;
+
+    background:#fff;
+
+    color:#222;
+
+}
+
+.recherche-box button{
+
+    width:60px;
+
+    border:none;
+
+    border-radius:50%;
 
     background:#d4af37;
 
     color:#111;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.3s;
+
 }
 
-.btn:hover{
+.recherche-box button:hover{
 
-    background:white;
+    background:#f4c430;
+
 }
 
-button{
+/* ===========================
+   CATEGORIES
+=========================== */
+
+.categories{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    padding:30px 15px;
+
+    background:#0d0d0d;
+
+}
+
+.categories button{
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:30px;
 
     background:#222;
 
-    color:white;
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
 }
 
-button:hover{
+.categories button:hover{
 
     background:#d4af37;
 
     color:#111;
+
 }
 
-.btn-commander{
+/* ===========================
+   TITRES
+=========================== */
 
-    background:#25D366;
-
-    color:white;
-}
-
-.btn-commander:hover{
-
-    background:#1ea952;
-}
-
-/* ========================= */
-/* SECTIONS */
-/* ========================= */
-
-section{
-
-    padding:70px 20px;
-
-    max-width:1200px;
-
-    margin:auto;
-}
-
-h2{
+section h2{
 
     text-align:center;
 
-    margin-bottom:40px;
-
     font-size:38px;
+
+    color:#d4af37;
+
+    margin:40px 0;
+
 }
 
-/* ========================= */
-/* PRODUITS */
-/* ========================= */
+/* ===========================
+   GRILLE PRODUITS
+=========================== */
 
-.produits{
+.grille-produits{
+
+    width:95%;
+
+    max-width:1400px;
+
+    margin:auto;
 
     display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-    gap:30px;
+    gap:25px;
+
+    padding-bottom:60px;
+
 }
+/* ===========================
+   CARTES PRODUITS
+=========================== */
 
-..carte{
-    background:#ffffff;
-    color:#222;
-}
+.carte{
 
-.carte h3{
-    color:#111;
-}
+    background:#1b1b1b;
 
-.carte p{
-    color:#444;
-}
+    border-radius:18px;
 
-.carte .prix{
-    color:#000;
-    font-size:32px;
-    font-weight:bold;
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:620px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+    transition:.3s;
+
 }
 
 .carte:hover{
 
     transform:translateY(-8px);
 
-    border-color:#d4af37;
+    box-shadow:0 15px 35px rgba(0,0,0,.5);
+
 }
 
 .carte img{
 
     width:100%;
 
-    height:270px;
+    height:280px;
 
     object-fit:cover;
 
-    border-radius:10px;
-
-    margin-bottom:15px;
 }
 
 .carte h3{
 
-    margin-bottom:10px;
-}
+    color:#d4af37;
 
-.carte{
-    background:#ffffff;
-    color:#222;
-}
+    font-size:22px;
 
-.carte h3{
-    color:#111;
+    text-align:center;
+
+    padding:18px 15px 10px;
+
 }
 
 .carte p{
-    color:#444;
+
+    color:#e5e5e5;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    padding:0 18px;
+
 }
 
 .carte .prix{
-    color:#000;
-    font-size:32px;
-    font-weight:bold;
+
+    margin-top:auto;
+
+    padding:20px 18px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#d4af37;
+
+    text-align:center;
+
 }
 
-/* ========================= */
-/* PANIER */
-/* ========================= */
+.carte button,
 
-#panier .carte{
+.carte .btn-commander{
 
-    max-width:700px;
+    width:90%;
+
+    margin:8px auto;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.carte button{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+.carte button:hover{
+
+    background:#f4c430;
+
+}
+
+.btn-commander{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#25D366;
+
+    color:#fff;
+
+    margin-bottom:18px;
+
+}
+
+.btn-commander:hover{
+
+    background:#1faa52;
+
+}
+
+/* Badge Nouveau / Promo */
+
+.badge{
+
+    position:absolute;
+
+    top:12px;
+
+    left:12px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+.carte{
+
+    position:relative;
+
+}
+/* ===========================
+   PANIER
+=========================== */
+
+#panier{
+
+    background:#111;
+
+    padding:60px 20px;
+
+}
+
+.panier{
+
+    max-width:900px;
 
     margin:auto;
+
+    background:#1b1b1b;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
 }
 
-#liste-panier p{
+.panier h2{
 
-    padding:10px;
-
-    border-bottom:1px solid #444;
-}
-
-/* ========================= */
-/* AVIS */
-/* ========================= */
-
-#temoignages h3{
+    text-align:center;
 
     color:#d4af37;
 
-    font-size:28px;
+    margin-bottom:25px;
+
 }
 
-/* ========================= */
-/* PAIEMENT */
-/* ========================= */
+.panier-item{
 
-#paiement h3{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #333;
+
+    color:#fff;
+
+}
+
+.panier-total{
+
+    text-align:right;
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    font-weight:bold;
 
     color:#d4af37;
+
 }
 
-/* ========================= */
-/* CONTACT */
-/* ========================= */
+/* ===========================
+   BOUTONS
+=========================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn-or{
+
+    background:#d4af37;
+
+    color:#111;
+
+}
+
+.btn-or:hover{
+
+    background:#f2c94c;
+
+    transform:translateY(-2px);
+
+}
+
+.btn-whatsapp{
+
+    background:#25D366;
+
+    color:#fff;
+
+}
+
+.btn-whatsapp:hover{
+
+    background:#1faa52;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+.carte,
+.categories button,
+.btn,
+.btn-principal{
+
+    transition:all .3s ease;
+
+}
+
+.carte:hover{
+
+    transform:translateY(-8px);
+
+}
+
+button:active,
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+/* ===========================
+   ESPACEMENT DES SECTIONS
+=========================== */
+
+section{
+
+    padding:60px 20px;
+
+}
+/* ===========================
+   AVIS CLIENTS
+=========================== */
+
+#avis{
+
+    background:#151515;
+
+}
+
+.avis-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.avis{
+
+    background:#222;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.avis:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.avis img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:15px;
+
+}
+
+.etoiles{
+
+    color:#FFD700;
+
+    font-size:22px;
+
+    margin:10px 0;
+
+}
+
+/* ===========================
+   CONTACT
+=========================== */
 
 #contact{
 
-    text-align:center;
+    background:#0d0d0d;
+
 }
 
-/* ========================= */
-/* FOOTER */
-/* ========================= */
+.contact-container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:40px;
+
+}
+
+.contact-info{
+
+    color:#ddd;
+
+    line-height:2;
+
+}
+
+.contact-info h3{
+
+    color:#d4af37;
+
+    margin-bottom:15px;
+
+}
+
+.contact-form input,
+
+.contact-form textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#222;
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+.contact-form textarea{
+
+    min-height:150px;
+
+    resize:vertical;
+
+}
+
+.contact-form button{
+
+    width:100%;
+
+    background:#d4af37;
+
+    color:#111;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.contact-form button:hover{
+
+    background:#f4c430;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
 
 footer{
 
     background:#000;
 
+    color:#ccc;
+
     text-align:center;
 
-    padding:30px;
-
-    color:#bbb;
-}
-
-/* ========================= */
-/* WHATSAPP */
-/* ========================= */
-
-.whatsapp-float{
-
-    position:fixed;
-
-    bottom:20px;
-
-    right:20px;
-
-    width:65px;
-
-    height:65px;
-
-    background:#25D366;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.4);
-
-    z-index:9999;
-
-    transition:.3s;
-}
-
-.whatsapp-float:hover{
-
-    transform:scale(1.1);
-}
-
-.whatsapp-float img{
-
-    width:38px;
-
-    height:38px;
-}
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media(max-width:768px){
-
-nav{
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-h1{
-
-    font-size:42px;
-}
-
-.slogan{
-
-    font-size:18px;
-}
-
-.logo{
-
-    width:110px;
-}
-
-button,
-.btn,
-.btn-commander{
-
-    width:100%;
-}
-
-.carte img{
-
-    height:220px;
-}
-
-}
-/* Barre de recherche */
-
-.recherche{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.recherche input{
-    width:100%;
-    max-width:500px;
-    padding:15px;
-    border:none;
-    border-radius:30px;
-    font-size:17px;
-}
-
-/* Catégories */
-
-.categories{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    margin-bottom:40px;
-}
-
-.categories button{
-    background:#d4af37;
-    color:#111;
-    border:none;
-    padding:12px 25px;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.categories button:hover{
-    background:white;
-}
-/* Bouton Appeler */
-
-.call-float{
-
-position:fixed;
-
-bottom:100px;
-
-right:20px;
-
-width:65px;
-
-height:65px;
-
-background:#007BFF;
-
-color:white;
-
-font-size:30px;
-
-border-radius:50%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-decoration:none;
-
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-
-z-index:9999;
-
-transition:.3s;
+    padding:35px 20px;
 
 }
 
-.call-float:hover{
+footer h3{
 
-transform:scale(1.1);
-
-}
-.compte-rebours{
-    margin-top:15px;
-    font-size:18px;
-    font-weight:bold;
-    color:#ff4444;
-}
-/* Nos services */
-
-#services h2{
-    margin-bottom:40px;
-}
-
-#services .carte{
-    transition:0.3s;
-}
-
-#services .carte:hover{
-    transform:translateY(-8px);
-    border:2px solid #d4af37;
-}
-/* Pourquoi choisir Le Prestige */
-
-#pourquoi{
-    padding:70px 20px;
-    text-align:center;
-}
-
-#pourquoi h2{
     color:#d4af37;
-    margin-bottom:40px;
-}
 
-#pourquoi .carte{
-    transition:0.3s;
-}
-
-#pourquoi .carte:hover{
-    transform:translateY(-8px);
-    border:2px solid #d4af37;
-}
-/* Bouton Paiement MTN */
-
-.btn-paiement{
-    display:block;
-    margin-top:20px;
-    padding:15px;
-    background:#ffcc00;
-    color:#000;
-    font-weight:bold;
-    text-align:center;
-    border-radius:10px;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.btn-paiement:hover{
-    background:#e6b800;
-    transform:scale(1.03);
-}
-/* Tableau fiche produit */
-
-.fiche-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-margin:25px 0;
-
-}
-
-.fiche-table td{
-
-padding:12px;
-
-border:1px solid #444;
-
-}
-
-.fiche-table tr:nth-child(even){
-
-background:#222;
-
-}
-.btn-retour{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:12px 25px;
-
-background:#d4af37;
-
-color:black;
-
-font-weight:bold;
-
-border-radius:8px;
-
-text-decoration:none;
-
-}
-
-.btn-retour:hover{
-
-background:white;
-
-}
-.btn-retour{
-    display:inline-block;
-    margin:10px 8px;
-    padding:12px 20px;
-    background:#d4af37;
-    color:#111;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.btn-retour:hover{
-    background:#f5d76e;
-    transform:translateY(-2px);
-}
-/* Alignement des cartes produits */
-
-.carte h3{
-    margin:15px 15px 10px;
-}
-
-.carte p{
-    margin:0 15px 12px;
-}
-
-.carte .prix{
-    font-weight:bold;
-    color:#b8860b;
-    font-size:20px;
-}
-
-/* Les boutons restent toujours en bas */
-.carte button{
-    margin-top:auto;
-}
-
-.carte button,
-.carte .btn-commander{
-
-    width:90%;
-    margin-left:auto;
-    margin-right:auto;
     margin-bottom:10px;
 
 }
 
-.btn-commander{
+footer p{
 
-    display:block;
-    text-align:center;
-    text-decoration:none;
-    padding:12px;
-    border-radius:8px;
+    margin:8px 0;
 
 }
+/* =====================================
+   RESPONSIVE
+===================================== */
 
+/* Tablettes */
 
-/* --- Fix alignement cartes --- */
-.carte{
- display:flex;
- flex-direction:column;
- min-height:620px;
+@media (max-width:992px){
+
+    .header{
+        padding:15px 20px;
+    }
+
+    #navbar{
+        gap:15px;
+    }
+
+    .hero h2{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .grille-produits{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
-.carte p.prix{
- margin-bottom:12px;
+
+/* Téléphones */
+
+@media (max-width:768px){
+
+    .header{
+        flex-wrap:wrap;
+        height:auto;
+        padding:15px;
+    }
+
+    #navbar{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        margin-top:15px;
+    }
+
+    #navbar.active{
+        display:flex;
+    }
+
+    .menu-mobile{
+        display:block;
+    }
+
+    .hero{
+        height:420px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .recherche-box{
+        flex-direction:column;
+    }
+
+    .recherche-box button{
+        width:100%;
+        border-radius:12px;
+        height:50px;
+    }
+
+    .categories{
+        gap:10px;
+    }
+
+    .categories button{
+        width:100%;
+    }
+
+    .grille-produits{
+        grid-template-columns:1fr;
+    }
+
+    .carte{
+        min-height:auto;
+    }
+
+    .carte img{
+        height:250px;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+    .panier-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
 }
-.carte button{
- margin-top:auto;
-}
-.carte button,
-.carte .btn-commander{
- display:block;
- width:90%;
- margin-left:auto;
- margin-right:auto;
- margin-bottom:10px;
- text-align:center;
-}
+
+/* Petits téléphones */
+
+@media (max-width:480px){
+
+    .logo img{
+        width:45px;
+    }
+
+    .logo-text h1{
+        font-size:20px;
+    }
+
+    .logo-text p{
+        font-size:12px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    section h2{
+        font-size:28px;
+    }
+
+    .btn-principal{
+        width:100%;
+        text-align:center;
+    }
+
+    .carte h3{
+        font-size:18px;
+    }
+
+    .carte .prix{
+        font-size:26px;
+    }
