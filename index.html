@@ -2,32 +2,48 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Le Prestige Vins et Spiritueux</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<!-- ========================= -->
+<!-- ACCUEIL -->
+<!-- ========================= -->
+
 <header id="accueil">
+
 <nav>
+
 <a href="#accueil">Accueil</a>
 <a href="#catalogue">Collection</a>
 <a href="#apropos">À propos</a>
 <a href="#temoignages">Avis</a>
 <a href="#paiement">Paiement</a>
 <a href="#contact">Contact</a>
+
 <a href="#panier">
-    🛒 Panier (<span id="nombre-panier">0</span>)
+🛒 Panier (<span id="nombre-panier">0</span>)
 </a>
+
 </nav>
 
-<img src="logo.png" alt="Le Prestige" class="logo">
+<img src="logo.png"
+     alt="Le Prestige"
+     class="logo">
 
-<h1>LE PRESTIGE<br>Vins et Spiritueux</h1>
+<h1>
+LE PRESTIGE
+<br>
+Vins et Spiritueux
+</h1>
 
 <p class="slogan">
 L'élégance du vin, le prestige d'une cave.
@@ -39,88 +55,115 @@ Découvrir notre collection
 
 </header>
 
+<!-- ========================= -->
+<!-- CATALOGUE -->
+<!-- ========================= -->
+
 <section id="catalogue">
+
 <div class="recherche">
 
-    <input
-        type="text"
-        id="recherche"
-        placeholder="🔍 Rechercher un produit..."
-        onkeyup="rechercherProduit()">
+<input
+type="text"
+id="recherche"
+placeholder="🔍 Rechercher un produit..."
+onkeyup="rechercherProduit()">
 
 </div>
 
 <div class="categories">
 
-<button onclick="filtrerCategorie('tous')">🍾 Tous les produits</button>
+<button onclick="filtrerCategorie('tous')">
+🍾 Tous les produits
+</button>
 
-<button onclick="filtrerCategorie('whisky')">🥃 Whiskies</button>
+<button onclick="filtrerCategorie('whisky')">
+🥃 Whiskies
+</button>
 
-<button onclick="filtrerCategorie('rouge')">🍷 rouges</button>
+<button onclick="filtrerCategorie('rouge')">
+🍷 Rouges
+</button>
 
-<button onclick="filtrerCategorie('blanc-sec')">🥂 blancs secs</button>
+<button onclick="filtrerCategorie('blanc-sec')">
+🥂 Blancs secs
+</button>
 
-<button onclick="filtrerCategorie('blanc-moelleux')">🍯blancs moelleux</button>
+<button onclick="filtrerCategorie('blanc-moelleux')">
+🍯 Blancs moelleux
+</button>
 
-<button onclick="filtrerCategorie('rose')">🌸 Rosés</button>
+<button onclick="filtrerCategorie('rose')">
+🌸 Rosés
+</button>
 
-<button onclick="filtrerCategorie('champagne')">🍾 Champagnes & Pétillants</button>
+<button onclick="filtrerCategorie('champagne')">
+🍾 Champagnes & Pétillants
+</button>
 
-<button onclick="filtrerCategorie('sans-alcool')">🚫 Sans alcool</button>
+<button onclick="filtrerCategorie('sans-alcool')">
+🚫 Sans alcool
+</button>
 
-<button onclick="filtrerCategorie('coffret')">🎁 Coffrets cadeaux</button>
-    
+<button onclick="filtrerCategorie('coffret')">
+🎁 Coffrets cadeaux
+</button>
+
 </div>
+
+<!-- ========================= -->
+<!-- PROMOTIONS -->
+<!-- ========================= -->
+
 <section id="promotions">
 
 <h2>🔥 Promotions du moment</h2>
 
 <div class="produits">
 
+<!-- Carte Promotion 1 -->
+
 <div class="carte">
 
-<h3>🍷 Domaine de La Baume Syrah</h3>
+    <h3>🍷 Domaine de La Baume Syrah</h3>
 
-<p>
-<strong>Ancien prix :</strong>
-<del>7 500 FCFA</del>
-</p>
+    <p><strong>Ancien prix :</strong> <del>7 500 FCFA</del></p>
 
-<p class="prix">6 500 FCFA</p>
+    <p class="prix">6 500 FCFA</p>
 
-<p>
-Profitez de cette offre exceptionnelle jusqu'à épuisement des stocks.
-</p>
-<p class="compte-rebours">
-⏳ Offre valable encore :
-<span id="timer"></span>
-</p>
+    <p>
+        Profitez de cette offre exceptionnelle jusqu'à épuisement des stocks.
+    </p>
+
+    <p class="compte-rebours">
+        ⏳ Offre valable encore :
+        <span id="timer"></span>
+    </p>
+
 </div>
 
+<!-- Carte Promotion 2 -->
+
 <div class="carte">
 
-<h3>
+    <h3>
+        <a href="whisky-lothaire-fruite.html">
+            Whisky Lothaire Fruité
+        </a>
+    </h3>
 
-<a href="whisky-lothaire-fruite.html">
+    <p><strong>Ancien prix :</strong> <del>22 000 FCFA</del></p>
 
-Whisky Lothaire Fruité
+    <p class="prix">20 000 FCFA</p>
 
-</a>
+    <p>Offre spéciale réservée à nos clients.</p>
 
-</h3>
-<p>
-<strong>Ancien prix :</strong>
-<del>22 000 FCFA</del>
-</p>
-
-<p class="prix">20 000 FCFA</p>
-<p>
-Offre spéciale réservée à nos clients.
-</p>
+</div>
 
 </div>
 
 </section>
+
 <h2>Notre Collection</h2>
 
 <div class="produits">
@@ -155,10 +198,12 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Whisky%20Lothaire%20Fruité."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Whisky Lothaire Tourbé -->
 
@@ -190,10 +235,12 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Whisky%20Lothaire%20Tourbé."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Domaine de La Baume Syrah -->
 
@@ -225,10 +272,12 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Domaine%20de%20La%20Baume%20Syrah."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Domaine de La Baume Sauvignon Blanc -->
 
@@ -243,7 +292,7 @@ Offre spéciale réservée à nos clients.
         <p>
             🇫🇷 Origine : France<br>
             🍇 Cépage : Sauvignon Blanc<br>
-            🥂 Vin blanc sec, frais et aromatique<br>
+            🥂 Vin blanc sec<br>
             🍾 Contenance : 75 cl
         </p>
 
@@ -260,10 +309,12 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Domaine%20de%20La%20Baume%20Sauvignon%20Blanc."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Merlot Domaine Sainte-Cécile -->
 
@@ -279,7 +330,6 @@ Offre spéciale réservée à nos clients.
             🇫🇷 Origine : France<br>
             🍇 Cépage : Merlot<br>
             🍷 Vin rouge souple et fruité<br>
-            🧀 Idéal avec les viandes rouges, les grillades et les fromages<br>
             🍾 Contenance : 75 cl
         </p>
 
@@ -293,13 +343,15 @@ Offre spéciale réservée à nos clients.
             🛒 Ajouter au panier
         </button>
 
-        <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Merlot%20Domaine%20Sainte-C%C3%A9cile."
+        <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Merlot%20Domaine%20Sainte-Cécile."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- SauvTerre 0.0 % -->
 
@@ -331,10 +383,12 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20SauvTerre%200.0%25."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- JP Chenet Réserve -->
 
@@ -349,7 +403,7 @@ Offre spéciale réservée à nos clients.
         <p>
             🇫🇷 Origine : France<br>
             🍇 Vin blanc sec<br>
-            🌼 Frais, fruité et élégant<br>
+            🌼 Frais et fruité<br>
             🍾 Contenance : 75 cl
         </p>
 
@@ -363,13 +417,15 @@ Offre spéciale réservée à nos clients.
             🛒 Ajouter au panier
         </button>
 
-        <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20JP%20Chenet%20R%C3%A9serve."
+        <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20JP%20Chenet%20Réserve."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Pierlant Demi-Sec -->
 
@@ -384,8 +440,7 @@ Offre spéciale réservée à nos clients.
         <p>
             🇫🇷 Origine : France<br>
             🥂 Vin pétillant demi-sec<br>
-            🍇 Bulles fines et saveurs fruitées<br>
-            🎉 Idéal pour les célébrations<br>
+            🍇 Bulles fines et fruitées<br>
             🍾 Contenance : 75 cl
         </p>
 
@@ -402,10 +457,12 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Pierlant%20Demi-Sec."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Coffret Dégustation Bordeaux -->
 
@@ -420,8 +477,7 @@ Offre spéciale réservée à nos clients.
         <p>
             🇫🇷 Origine : France<br>
             🍷 Sélection de vins de Bordeaux<br>
-            🎁 Coffret cadeau élégant<br>
-            🍾 Idéal pour offrir ou pour les grandes occasions
+            🎁 Coffret cadeau élégant
         </p>
 
         <p class="prix">36 000 FCFA</p>
@@ -434,13 +490,15 @@ Offre spéciale réservée à nos clients.
             🛒 Ajouter au panier
         </button>
 
-        <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Coffret%20D%C3%A9gustation%20Bordeaux."
+        <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Coffret%20Dégustation%20Bordeaux."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
+
+</div>
 
 <!-- Coffret El Chivo -->
 
@@ -455,8 +513,7 @@ Offre spéciale réservée à nos clients.
         <p>
             🇨🇱 Origine : Chili<br>
             🍷 Sélection premium El Chivo<br>
-            🎁 Coffret cadeau élégant<br>
-            🍾 Idéal pour les anniversaires, fêtes et cadeaux
+            🎁 Coffret cadeau
         </p>
 
         <p class="prix">13 500 FCFA</p>
@@ -472,12 +529,14 @@ Offre spéciale réservée à nos clients.
         <a href="https://wa.me/2290197592841?text=Bonjour,%20je%20souhaite%20commander%20le%20Coffret%20El%20Chivo."
            target="_blank"
            class="btn-commander">
-             Commander
+            Commander
         </a>
 
     </div>
 
 </div>
+
+<!-- La Partie 4 commencera avec Orélie Vin Pétillant -->
 <div class="carte champagne">
 <img src="orelie-petillant.jpg" alt="Orélie Vin Pétillant">
 <h3>Orelie Vin Pétillant</h3>
