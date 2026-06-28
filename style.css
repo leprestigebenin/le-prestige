@@ -714,3 +714,23 @@ background:white;
     justify-content:center;
     border-radius:12px;
 }
+.carte{
+    display:flex;
+    flex-direction:column;
+}
+
+.contenu{
+    flex:1;
+}
+
+.actions{
+    margin-top:auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.actions button,
+.actions a{
+    width:100%;
+}
