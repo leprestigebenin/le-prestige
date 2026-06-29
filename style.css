@@ -739,3 +739,42 @@ background:white;
         width:32px;
         height:32px;
     }
+.recherche{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    max-width:700px;
+    margin:35px auto;
+}
+
+.recherche input{
+    flex:1;
+    padding:15px 20px;
+    border-radius:40px;
+    border:2px solid #D4AF37;
+    font-size:17px;
+}
+
+#effacerRecherche{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#6D071A;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:20px;
+}
+
+#effacerRecherche:hover{
+    background:#D4AF37;
+    color:#111;
+}
+
+#nb-resultats{
+    text-align:center;
+    margin-top:10px;
+    color:#D4AF37;
+    font-weight:bold;
+}
