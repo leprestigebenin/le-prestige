@@ -149,61 +149,65 @@ window.onload = function(){
 function rechercherProduit(){
 
     let filtre = document.getElementById("recherche").value.toLowerCase().trim();
-    let boutonEffacer = document.getElementById("effacerRecherche");
 
-boutonEffacer.style.display =
-    filtre.length > 0 ? "block" : "none";
+    let produits = document.querySelectorAll(".carte");
+
     let suggestions = document.getElementById("suggestions");
 
-suggestions.innerHTML = "";
+    let boutonEffacer = document.getElementById("effacerRecherche");
 
-if(filtre.length > 0){
+    let nbResultats = document.getElementById("nb-resultats");
+
+    let compteur = 0;
+
+    let dejaAjoutes = [];
+
+    suggestions.innerHTML = "";
+
+    boutonEffacer.style.display = filtre ? "block" : "none";
 
     produits.forEach(function(carte){
 
-        let nom = carte.querySelector("h3").innerText;
+        let texte = carte.innerText.toLowerCase();
 
-        if(nom.toLowerCase().includes(filtre)){
+        let titre = carte.querySelector("h3");
 
-            suggestions.innerHTML +=
-            "<div onclick='choisirProduit(\""+nom+"\")'>"+nom+"</div>";
+        if(!titre) return;
+
+        let nom = titre.innerText;
+
+        if(texte.includes(filtre)){
+
+            carte.style.display = "flex";
+
+            compteur++;
+
+            if(
+                filtre.length > 0 &&
+                nom.toLowerCase().includes(filtre) &&
+                !dejaAjoutes.includes(nom) &&
+                dejaAjoutes.length < 5
+            ){
+
+                dejaAjoutes.push(nom);
+
+                suggestions.innerHTML +=
+                "<div onclick=\"choisirProduit('"+nom.replace(/'/g,"\\'")+"')\">🔍 "+nom+"</div>";
+
+            }
+
+        }else{
+
+            carte.style.display = "none";
 
         }
 
     });
 
     suggestions.style.display =
-        suggestions.innerHTML=="" ? "none" : "block";
+        suggestions.innerHTML ? "block" : "none";
 
-}else{
-
-    suggestions.style.display="none";
-
-}
-
-    let produits = document.querySelectorAll(".carte");
-
-    let compteur = 0;
-
-    produits.forEach(function(carte){
-
-        let texte = carte.innerText.toLowerCase();
-
-        if(texte.includes(filtre)){
-
-            carte.style.display="flex";
-
-            compteur++;
-
-        }else{
-
-            carte.style.display="none";
-
-        }
-
-    });
-
-    document.getElementById("nb-resultats").innerHTML =
+    nbResultats.innerHTML =
         compteur + " produit(s) trouvé(s)";
 }
 
