@@ -430,17 +430,36 @@ button,
 /* Barre de recherche */
 
 .recherche{
-    text-align:center;
-    margin-bottom:20px;
+    display:flex;
+    justify-content:center;
+    margin:30px auto;
 }
 
 .recherche input{
-    width:100%;
-    max-width:500px;
-    padding:15px;
+
+    width:650px;
+    max-width:90%;
+
+    padding:18px 25px;
+
     border:none;
-    border-radius:30px;
-    font-size:17px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    outline:none;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+.recherche input:focus{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 15px #d4af37;
 }
 
 /* Catégories */
@@ -634,4 +653,6 @@ background:white;
     background:#f5d76e;
     transform:translateY(-2px);
 }
-
+.carte{
+    transition:all .35s ease;
+}
