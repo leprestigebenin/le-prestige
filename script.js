@@ -299,3 +299,75 @@ function choisirProduit(nom){
     rechercherProduit();
 
 }
+/* ===== Navigation clavier des suggestions ===== */
+
+let indexSuggestion = -1;
+
+document.getElementById("recherche").addEventListener("keydown", function(e){
+
+    let items = document.querySelectorAll("#suggestions div");
+
+    if(items.length === 0) return;
+
+    if(e.key === "ArrowDown"){
+
+        e.preventDefault();
+
+        indexSuggestion++;
+
+        if(indexSuggestion >= items.length) indexSuggestion = 0;
+
+        majSuggestion(items);
+
+    }
+
+    else if(e.key === "ArrowUp"){
+
+        e.preventDefault();
+
+        indexSuggestion--;
+
+        if(indexSuggestion < 0) indexSuggestion = items.length - 1;
+
+        majSuggestion(items);
+
+    }
+
+    else if(e.key === "Enter"){
+
+        if(indexSuggestion >= 0){
+
+            e.preventDefault();
+
+            items[indexSuggestion].click();
+
+        }
+
+    }
+
+    else if(e.key === "Escape"){
+
+        document.getElementById("suggestions").style.display = "none";
+
+        indexSuggestion = -1;
+
+    }
+
+});
+
+function majSuggestion(items){
+
+    items.forEach(item => item.classList.remove("active"));
+
+    items[indexSuggestion].classList.add("active");
+
+}
+/* Suggestion sélectionnée au clavier */
+
+.suggestions div.active{
+
+    background:#6D071A;
+
+    color:white;
+
+}
