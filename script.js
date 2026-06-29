@@ -149,6 +149,10 @@ window.onload = function(){
 function rechercherProduit(){
 
     let filtre = document.getElementById("recherche").value.toLowerCase().trim();
+    let boutonEffacer = document.getElementById("effacerRecherche");
+
+boutonEffacer.style.display =
+    filtre.length > 0 ? "block" : "none";
     let suggestions = document.getElementById("suggestions");
 
 suggestions.innerHTML = "";
@@ -272,6 +276,10 @@ setInterval(function(){
 function viderRecherche(){
 
     document.getElementById("recherche").value="";
+
+    document.getElementById("effacerRecherche").style.display="none";
+
+    document.getElementById("suggestions").style.display="none";
 
     rechercherProduit();
 
