@@ -441,21 +441,6 @@ button,
     font-size:17px;
 }
 
-#effacerRecherche{
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:50%;
-    background:#6D071A;
-    color:white;
-    cursor:pointer;
-    flex-shrink:0;
-}
-
-#effacerRecherche:hover{
-    background:#D4AF37;
-    color:#111;
-}
 /* Catégories */
 
 .categories{
