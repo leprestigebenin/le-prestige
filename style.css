@@ -428,36 +428,29 @@ button,
 .recherche{
     display:flex;
     justify-content:center;
-    margin:30px auto;
+    align-items:center;
+    margin:35px auto;
+    max-width:700px;
+    position:relative;
 }
 
 .recherche input{
-
-    width:650px;
-    max-width:90%;
-
-    padding:18px 25px;
-
-    border:none;
-
-    border-radius:40px;
-
-    font-size:18px;
-
+    width:100%;
+    padding:16px 55px 16px 20px;
+    font-size:17px;
+    border:2px solid #D4AF37;
+    border-radius:50px;
     outline:none;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-
-    transition:.3s;
+    background:#fff;
+    color:#222;
+    transition:all .3s ease;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
 .recherche input:focus{
-
-    transform:scale(1.02);
-
-    box-shadow:0 0 15px #d4af37;
+    border-color:#6D071A;
+    box-shadow:0 0 12px rgba(109,7,26,.35);
 }
-
 /* Catégories */
 
 .categories{
