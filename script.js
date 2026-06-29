@@ -345,12 +345,3 @@ function majSuggestion(items){
     items[indexSuggestion].classList.add("active");
 
 }
-/* Suggestion sélectionnée au clavier */
-
-.suggestions div.active{
-
-    background:#6D071A;
-
-    color:white;
-
-}
