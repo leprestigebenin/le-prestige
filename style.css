@@ -738,41 +738,23 @@ background:white;
 /* Suggestions */
 
 .suggestions{
-
-    max-width:700px;
-
-    margin:0 auto 20px;
-
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
     background:white;
-
     border-radius:12px;
-
-    overflow:hidden;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
     display:none;
-
+    z-index:1000;
 }
 
 .suggestions div{
-
-    padding:12px 18px;
-
+    padding:12px 15px;
     cursor:pointer;
-
-    color:#333;
-
-    border-bottom:1px solid #eee;
-
-    transition:.3s;
-
 }
 
 .suggestions div:hover{
-
     background:#6D071A;
-
     color:white;
-
 }
