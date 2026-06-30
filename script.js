@@ -1,42 +1,48 @@
-// ===========================
-// LE PRESTIGE - PANIER
-// ===========================
+// =====================================================
+// LE PRESTIGE V2
+// PANIER
+// =====================================================
 
 let panier = [];
 let total = 0;
 
+// =====================================================
 // Ajouter un produit
-function ajouterPanier(nom, prix) {
+// =====================================================
+
+function ajouterPanier(nom, prix){
 
     panier.push({
-        nom: nom,
-        prix: prix
+        nom,
+        prix
     });
 
     afficherPanier();
 
 }
 
+// =====================================================
 // Afficher le panier
-function afficherPanier() {
+// =====================================================
+
+function afficherPanier(){
 
     const liste = document.getElementById("liste-panier");
     const totalElement = document.getElementById("total");
     const compteur = document.getElementById("nombre-panier");
 
-if (compteur) {
-    compteur.innerHTML = panier.length;
-}
+    if(!liste || !totalElement) return;
 
     liste.innerHTML = "";
 
     total = 0;
 
-    panier.forEach(function(produit, index){
+    panier.forEach((produit,index)=>{
 
         total += produit.prix;
 
         liste.innerHTML += `
+
         <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid #444;">
 
             <div>
@@ -48,31 +54,36 @@ if (compteur) {
             </div>
 
             <button onclick="supprimerProduit(${index})">
+
                 ❌
+
             </button>
 
         </div>
+
         `;
 
     });
 
-    if (panier.length === 0) {
+    if(panier.length===0){
 
-        liste.innerHTML = "<p>Votre panier est vide.</p>";
+        liste.innerHTML="<p>Votre panier est vide.</p>";
 
     }
 
     totalElement.innerHTML = total.toLocaleString();
-if(compteur){
 
-    compteur.innerHTML = panier.length;
+    if(compteur){
+
+        compteur.textContent = panier.length;
+
+    }
 
 }
 
-
-}
-
+// =====================================================
 // Supprimer un produit
+// =====================================================
 
 function supprimerProduit(index){
 
@@ -82,17 +93,21 @@ function supprimerProduit(index){
 
 }
 
+// =====================================================
 // Vider le panier
+// =====================================================
 
 function viderPanier(){
 
-    panier = [];
+    panier=[];
 
     afficherPanier();
 
 }
 
-// Commander
+// =====================================================
+// Commander via WhatsApp
+// =====================================================
 
 function commanderWhatsApp(){
 
@@ -111,11 +126,11 @@ Je souhaite commander :
 
 `;
 
-    panier.forEach(function(produit){
+    panier.forEach(produit=>{
 
         message +=
 `• ${produit.nom}
-  ${produit.prix.toLocaleString()} FCFA
+${produit.prix.toLocaleString()} FCFA
 
 `;
 
@@ -130,49 +145,53 @@ Adresse :
 
 Merci.`;
 
-    const lien =
-"https://wa.me/2290197592841?text="+encodeURIComponent(message);
-
-    window.open(lien,"_blank");
-
+   window.open(url, "_blank", "noopener,noreferrer");
 }
 
-// Charger le panier
+// =====================================================
+// Initialisation
+// =====================================================
 
 window.onload = function(){
 
     afficherPanier();
 
-}
-// Recherche
+};
+// =====================================================
+// RECHERCHE + SUGGESTIONS
+// =====================================================
 
 function rechercherProduit(){
 
-    let filtre = document.getElementById("recherche").value.toLowerCase().trim();
+    const recherche = document.getElementById("recherche");
+    const suggestions = document.getElementById("suggestions");
+    const nbResultats = document.getElementById("nb-resultats");
 
-    let produits = document.querySelectorAll(".carte");
-let suggestions = document.getElementById("suggestions");
-let nbResultats = document.getElementById("nb-resultats");
+    if(!recherche) return;
 
-if(!suggestions || !nbResultats){
-    return;
-}
+    const filtre = recherche.value.toLowerCase().trim();
+
+    const cartes = document.querySelectorAll(".produits .carte");
 
     let compteur = 0;
 
     let dejaAjoutes = [];
 
-    suggestions.innerHTML = "";
+    if(suggestions){
 
-    produits.forEach(function(carte){
+        suggestions.innerHTML = "";
 
-        let texte = carte.innerText.toLowerCase();
+    }
 
-        let titre = carte.querySelector("h3");
+    cartes.forEach(carte=>{
+
+        const texte = carte.innerText.toLowerCase();
+
+        const titre = carte.querySelector("h3");
 
         if(!titre) return;
 
-        let nom = titre.innerText;
+        const nom = titre.innerText;
 
         if(texte.includes(filtre)){
 
@@ -181,16 +200,26 @@ if(!suggestions || !nbResultats){
             compteur++;
 
             if(
+
+                suggestions &&
+
                 filtre.length > 0 &&
+
                 nom.toLowerCase().includes(filtre) &&
+
                 !dejaAjoutes.includes(nom) &&
+
                 dejaAjoutes.length < 5
+
             ){
 
                 dejaAjoutes.push(nom);
 
                 suggestions.innerHTML +=
-              '<div onclick="choisirProduit(\'' + nom + '\')">🔍 ' + nom + '</div>';
+                `<div onclick="choisirProduit('${nom.replace(/'/g,"\\'")}')">
+                    🔍 ${nom}
+                </div>`;
+
             }
 
         }else{
@@ -201,30 +230,55 @@ if(!suggestions || !nbResultats){
 
     });
 
-    suggestions.style.display =
-        suggestions.innerHTML ? "block" : "none";
+    if(nbResultats){
 
-    nbResultats.innerHTML =
-        compteur + " produit(s) trouvé(s)";
+        nbResultats.textContent =
+            compteur + " produit(s) trouvé(s)";
+
+    }
+
+    if(suggestions){
+
+        suggestions.style.display =
+            suggestions.innerHTML ? "block" : "none";
+
+    }
+
 }
 
-// Catégories
+// =====================================================
+// CHOISIR UNE SUGGESTION
+// =====================================================
+
+function choisirProduit(nom){
+
+    document.getElementById("recherche").value = nom;
+
+    document.getElementById("suggestions").style.display = "none";
+
+    rechercherProduit();
+
+}
+
+// =====================================================
+// FILTRER PAR CATÉGORIE
+// =====================================================
 
 function filtrerCategorie(categorie){
 
-    let produits = document.querySelectorAll(".produits .carte");
+    const cartes = document.querySelectorAll(".produits .carte");
 
-    produits.forEach(function(carte){
+    cartes.forEach(carte=>{
 
         if(categorie==="tous"){
 
-            carte.style.display="block";
+            carte.style.display="flex";
 
         }
 
         else if(carte.classList.contains(categorie)){
 
-            carte.style.display="block";
+            carte.style.display="flex";
 
         }
 
@@ -237,14 +291,17 @@ function filtrerCategorie(categorie){
     });
 
 }
-// =========================
-// Compte à rebours Promotion
-// =========================
+// =====================================================
+// COMPTE À REBOURS
+// =====================================================
 
-// Date de fin de la promotion
 const dateFin = new Date("December 31, 2026 23:59:59").getTime();
 
-setInterval(function(){
+function mettreAJourCompteRebours(){
+
+    const timer = document.getElementById("timer");
+
+    if(!timer) return;
 
     const maintenant = new Date().getTime();
 
@@ -252,98 +309,123 @@ setInterval(function(){
 
     if(difference <= 0){
 
-        document.getElementById("timer").innerHTML =
-        "Promotion terminée";
+        timer.textContent = "Promotion terminée";
 
         return;
 
     }
 
-    const jours = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const jours = Math.floor(difference / (1000*60*60*24));
 
-    const heures = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const heures = Math.floor((difference % (1000*60*60*24)) / (1000*60*60));
 
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const minutes = Math.floor((difference % (1000*60*60)) / (1000*60));
 
-    const secondes = Math.floor((difference % (1000 * 60)) / 1000);
+    const secondes = Math.floor((difference % (1000*60)) / 1000);
 
-    document.getElementById("timer").innerHTML =
-    jours + " j " +
-    heures + " h " +
-    minutes + " min " +
-    secondes + " s";
-
-},1000);
-
-function choisirProduit(nom){
-
-    document.getElementById("recherche").value = nom;
-
-    document.getElementById("suggestions").style.display="none";
-
-    rechercherProduit();
+    timer.textContent =
+        `${jours} j ${heures} h ${minutes} min ${secondes} s`;
 
 }
-/* ===== Navigation clavier des suggestions ===== */
+
+setInterval(mettreAJourCompteRebours,1000);
+
+
+
+// =====================================================
+// NAVIGATION CLAVIER
+// =====================================================
 
 let indexSuggestion = -1;
 
-document.getElementById("recherche").addEventListener("keydown", function(e){
+const champRecherche = document.getElementById("recherche");
 
-    let items = document.querySelectorAll("#suggestions div");
+if(champRecherche){
 
-    if(items.length === 0) return;
+    champRecherche.addEventListener("keydown",function(e){
 
-    if(e.key === "ArrowDown"){
+        const items = document.querySelectorAll("#suggestions div");
 
-        e.preventDefault();
+        if(items.length===0) return;
 
-        indexSuggestion++;
-
-        if(indexSuggestion >= items.length) indexSuggestion = 0;
-
-        majSuggestion(items);
-
-    }
-
-    else if(e.key === "ArrowUp"){
-
-        e.preventDefault();
-
-        indexSuggestion--;
-
-        if(indexSuggestion < 0) indexSuggestion = items.length - 1;
-
-        majSuggestion(items);
-
-    }
-
-    else if(e.key === "Enter"){
-
-        if(indexSuggestion >= 0){
+        if(e.key==="ArrowDown"){
 
             e.preventDefault();
 
-            items[indexSuggestion].click();
+            indexSuggestion++;
+
+            if(indexSuggestion>=items.length){
+
+                indexSuggestion=0;
+
+            }
+
+            majSuggestion(items);
 
         }
 
-    }
+        else if(e.key==="ArrowUp"){
 
-    else if(e.key === "Escape"){
+            e.preventDefault();
 
-        document.getElementById("suggestions").style.display = "none";
+            indexSuggestion--;
 
-        indexSuggestion = -1;
+            if(indexSuggestion<0){
 
-    }
+                indexSuggestion=items.length-1;
 
-});
+            }
+
+            majSuggestion(items);
+
+        }
+
+        else if(e.key==="Enter"){
+
+            if(indexSuggestion>=0){
+
+                e.preventDefault();
+
+                items[indexSuggestion].click();
+
+            }
+
+        }
+
+        else if(e.key==="Escape"){
+
+            document.getElementById("suggestions").style.display="none";
+
+            indexSuggestion=-1;
+
+        }
+
+    });
+
+}
 
 function majSuggestion(items){
 
-    items.forEach(item => item.classList.remove("active"));
+    items.forEach(item=>item.classList.remove("active"));
 
-    items[indexSuggestion].classList.add("active");
+    if(indexSuggestion>=0){
+
+        items[indexSuggestion].classList.add("active");
+
+    }
 
 }
+
+
+
+// =====================================================
+// INITIALISATION
+// =====================================================
+
+document.addEventListener("DOMContentLoaded",function(){
+
+    afficherPanier();
+
+    mettreAJourCompteRebours();
+
+});
