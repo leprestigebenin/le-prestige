@@ -456,8 +456,7 @@ function majSuggestion(items){
 
 function afficherNotification(message){
 
-    const notification =
-        document.getElementById("notification-panier");
+    const notification = document.getElementById("notification-panier");
 
     if(!notification) return;
 
@@ -469,7 +468,7 @@ function afficherNotification(message){
 
         notification.classList.remove("active");
 
-    },2000);
+    }, 2000);
 
 }
 
