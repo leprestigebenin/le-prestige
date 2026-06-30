@@ -71,8 +71,7 @@ function afficherPanier(){
 
     }
 
-    totalElement.innerHTML = total.toLocaleString();
-
+    totalElement.textContent = total.toLocaleString();
     if(compteur){
 
         compteur.textContent = panier.length;
@@ -145,18 +144,12 @@ Adresse :
 
 Merci.`;
 
-   window.open(url, "_blank", "noopener,noreferrer");
+const url =
+"https://wa.me/2290197592841?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank", "noopener,noreferrer");
 }
 
-// =====================================================
-// Initialisation
-// =====================================================
-
-window.onload = function(){
-
-    afficherPanier();
-
-};
 // =====================================================
 // RECHERCHE + SUGGESTIONS
 // =====================================================
@@ -176,6 +169,8 @@ function rechercherProduit(){
     let compteur = 0;
 
     let dejaAjoutes = [];
+    
+    indexSuggestion = -1;
 
     if(suggestions){
 
@@ -295,7 +290,7 @@ function filtrerCategorie(categorie){
 // COMPTE À REBOURS
 // =====================================================
 
-const dateFin = new Date("December 31, 2026 23:59:59").getTime();
+const dateFin = new Date(2026, 11, 31, 23, 59, 59).getTime();
 
 function mettreAJourCompteRebours(){
 
