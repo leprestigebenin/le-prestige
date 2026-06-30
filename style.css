@@ -406,6 +406,48 @@ section{
 
 }
 
+#effacerRecherche{
+
+    position:absolute;
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#6D071A;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+#effacerRecherche:hover{
+
+    background:#D4AF37;
+
+    color:#111;
+
+}
+
 /* ===================================================== */
 /* SUGGESTIONS */
 /* ===================================================== */
