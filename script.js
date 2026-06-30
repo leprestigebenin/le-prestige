@@ -13,9 +13,10 @@ let total = 0;
 function ajouterPanier(nom, prix){
 
     panier.push({
-        nom,
-        prix
-    });
+    nom,
+    prix,
+    quantite: 1
+});
 
     afficherPanier();
 
@@ -40,7 +41,7 @@ function afficherPanier(){
 
     panier.forEach((produit,index)=>{
 
-        total += produit.prix;
+        total += produit.prix * produit.quantite;
 
         liste.innerHTML += `
 
@@ -50,8 +51,15 @@ function afficherPanier(){
 
                 <strong>${produit.nom}</strong><br>
 
-                ${produit.prix.toLocaleString()} FCFA
+${produit.prix.toLocaleString()} FCFA
 
+<br><br>
+
+<button onclick="diminuerQuantite(${index})">−</button>
+
+<strong style="margin:0 10px;">${produit.quantite}</strong>
+
+<button onclick="augmenterQuantite(${index})">+</button>
             </div>
 
             <button onclick="supprimerProduit(${index})">
@@ -90,6 +98,40 @@ function afficherPanier(){
 function supprimerProduit(index){
 
     panier.splice(index,1);
+
+    afficherPanier();
+
+}
+
+// =====================================================
+// Augmenter la quantité
+// =====================================================
+
+function augmenterQuantite(index){
+
+    panier[index].quantite++;
+
+    afficherPanier();
+
+}
+
+// =====================================================
+// Diminuer la quantité
+// =====================================================
+
+function diminuerQuantite(index){
+
+    if(panier[index].quantite > 1){
+
+        panier[index].quantite--;
+
+    }else{
+
+        supprimerProduit(index);
+
+        return;
+
+    }
 
     afficherPanier();
 
