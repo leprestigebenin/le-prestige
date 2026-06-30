@@ -44,7 +44,7 @@ body{
 
     padding:20px;
 
-    padding-top:120px;
+    padding-top:80px;
 
 }
 
@@ -219,7 +219,7 @@ button:focus,
 
     height:auto;
 
-    margin-top:20px;
+    margin-top:35px;
 
     border-radius:30px;
 
@@ -230,6 +230,14 @@ button:focus,
     font-weight:bold;
 
     text-decoration:none;
+
+}
+
+.hero h1,
+.hero h2,
+.hero p{
+
+    text-shadow:2px 2px 8px rgba(0,0,0,.6);
 
 }
 
