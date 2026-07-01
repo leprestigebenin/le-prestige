@@ -1556,6 +1556,9 @@ footer{
 /* Version mobile */
 
 @media (max-width:768px){
+    #menu.active{
+    display:flex;
+}
 
     nav{
         position:relative;
