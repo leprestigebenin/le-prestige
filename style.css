@@ -1660,3 +1660,27 @@ footer{
     z-index:9999;
 
 }
+
+/* =========================
+   PANIER LATÉRAL
+========================= */
+
+#panier-lateral{
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 380px;
+    max-width: 95%;
+    height: 100vh;
+    background: #111;
+    color: white;
+    overflow-y: auto;
+    padding: 20px;
+    transition: right .35s ease;
+    z-index: 9999;
+    box-shadow: -5px 0 20px rgba(0,0,0,.4);
+}
+
+#panier-lateral.ouvert{
+    right: 0;
+}
