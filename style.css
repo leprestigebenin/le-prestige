@@ -1276,3 +1276,12 @@ footer p{
     font-size:18px;
     margin:0 10px;
 }
+.btn-supprimer{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:8px;
+    background:#C62828;
+    color:white;
+    cursor:pointer;
+}
