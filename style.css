@@ -1707,3 +1707,35 @@ footer{
     font-size:22px;
     cursor:pointer;
 }
+
+/* ==========================
+   BAS DU PANIER FIXE
+========================== */
+
+.footer-panier{
+
+    position:sticky;
+
+    bottom:0;
+
+    background:#111;
+
+    padding:20px;
+
+    border-top:2px solid #d4af37;
+
+}
+
+.footer-panier h3{
+
+    margin-bottom:15px;
+
+    color:#fff;
+
+}
+
+.footer-panier button{
+
+    width:100%;
+
+}
