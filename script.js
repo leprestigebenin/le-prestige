@@ -622,3 +622,6 @@ document.querySelectorAll("#menu a").forEach(link => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("menu").classList.remove("active");
+});
