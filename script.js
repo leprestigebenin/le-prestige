@@ -543,3 +543,66 @@ document.addEventListener("DOMContentLoaded",function(){
     mettreAJourCompteRebours();
 
 });
+
+// =====================================
+// AVIS CLIENTS V4
+// =====================================
+
+let noteSelectionnee = 5;
+
+// Choisir la note
+function choisirNote(note){
+    noteSelectionnee = note;
+}
+
+// Publier un avis
+function publierAvis(){
+
+    const nom = document.getElementById("nom-client").value.trim();
+    const commentaire = document.getElementById("commentaire-client").value.trim();
+
+    if(nom === "" || commentaire === ""){
+        alert("Veuillez remplir tous les champs.");
+        return;
+    }
+
+    const liste = document.getElementById("liste-avis");
+
+    const etoiles = "⭐".repeat(noteSelectionnee);
+
+    liste.innerHTML =
+    `
+    <div class="avis-card">
+        <div class="etoiles-affichage">${etoiles}</div>
+        <h3>${nom}</h3>
+        <p>${commentaire}</p>
+    </div>
+    ` + liste.innerHTML;
+
+    sauvegarderAvis();
+
+    document.getElementById("nom-client").value = "";
+    document.getElementById("commentaire-client").value = "";
+
+}
+
+// Sauvegarder
+function sauvegarderAvis(){
+
+    localStorage.setItem(
+        "avisClients",
+        document.getElementById("liste-avis").innerHTML
+    );
+
+}
+
+// Charger les avis
+document.addEventListener("DOMContentLoaded",function(){
+
+    const avis = localStorage.getItem("avisClients");
+
+    if(avis){
+        document.getElementById("liste-avis").innerHTML = avis;
+    }
+
+});
