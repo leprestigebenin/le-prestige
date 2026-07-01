@@ -1634,31 +1634,31 @@ footer{
 }
 
 #retour-haut{
-
     position:fixed;
-    right:25px;
-    bottom:120px;
+    right:15px;
+    bottom:90px;
 
-    width:55px;
-    height:55px;
-
-    border:none;
-    border-radius:50%;
-
-    background:#d4af37;
-    color:#111;
-
-    font-size:24px;
-    cursor:pointer;
+    width:45px;
+    height:45px;
 
     display:none;
     justify-content:center;
     align-items:center;
 
-    box-shadow:0 8px 18px rgba(0,0,0,.35);
+    background:#666;
+    color:white;
 
-    z-index:9999;
+    border:none; 
+    border-radius:50%;
 
+    font-size:20px;
+    cursor:pointer;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+
+    transition:0.3s;
+
+    z-index:999;
 }
 
 /* =========================
