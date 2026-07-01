@@ -1723,9 +1723,9 @@ footer{
 }
 
 .fermer-panier{
-    position:absolute;
+    position:fixed;
     top:20px;
-    right:40px;
+    right:20px;
 
     width:50px;
     height:50px;
@@ -1739,9 +1739,8 @@ footer{
     font-size:30px;
     cursor:pointer;
 
-    z-index:99999;
+    z-index:10001;
 }
-
 /* ==========================
    BAS DU PANIER FIXE
 ========================== */
