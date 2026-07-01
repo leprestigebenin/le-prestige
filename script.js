@@ -31,6 +31,8 @@ function ajouterPanier(nom, prix, image){
 
     afficherPanier();
 
+    ouvrirPanier();
+
     afficherNotification(nom + " ajouté au panier");
 
 }
@@ -644,3 +646,11 @@ window.addEventListener("scroll",function(){
     }
 
 });
+
+function ouvrirPanier() {
+    document.getElementById("panier-lateral").classList.add("ouvert");
+}
+
+function fermerPanier() {
+    document.getElementById("panier-lateral").classList.remove("ouvert");
+}
