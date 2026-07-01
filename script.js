@@ -612,6 +612,6 @@ document.addEventListener("DOMContentLoaded",function(){
 // =====================================
 
 function toggleMenu() {
-    document.getElementById("menu").classList.toggle("active");
+    alert("Le bouton fonctionne !");
 }
 
