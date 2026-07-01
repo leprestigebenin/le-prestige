@@ -348,11 +348,24 @@ function viderRecherche(){
 
 function choisirProduit(nom){
 
-    document.getElementById("recherche").value = nom;
+    const cartes = document.querySelectorAll(".produits .carte");
 
-    document.getElementById("suggestions").style.display = "none";
+    cartes.forEach(carte=>{
 
-    rechercherProduit();
+        const titre = carte.querySelector("h3");
+
+        if(titre && titre.innerText === nom){
+
+            carte.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+
+    });
+
+    viderRecherche();
 
 }
 
