@@ -1672,9 +1672,10 @@ footer{
 
 #retour-haut{
     position:fixed;
-    right:15px;
-    bottom:90px;
-
+    
+    right:20px;
+    bottom:180px;
+    
     width:45px;
     height:45px;
 
