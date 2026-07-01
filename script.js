@@ -55,11 +55,11 @@ ${produit.prix.toLocaleString()} FCFA
 
 <br><br>
 
-<button onclick="diminuerQuantite(${index})">−</button>
+<button class="quantite-btn" onclick="diminuerQuantite(${index})">−</button>
 
-<strong style="margin:0 10px;">${produit.quantite}</strong>
+<span class="quantite">${produit.quantite}</span>
 
-<button onclick="augmenterQuantite(${index})">+</button>
+<button class="quantite-btn" onclick="augmenterQuantite(${index})">+</button>
             </div>
 
             <button onclick="supprimerProduit(${index})">
@@ -83,9 +83,17 @@ ${produit.prix.toLocaleString()} FCFA
     totalElement.textContent = total.toLocaleString();
     if(compteur){
 
-        compteur.textContent = panier.length;
+    let nbArticles = 0;
 
-    }
+    panier.forEach(produit => {
+
+        nbArticles += produit.quantite;
+
+    });
+
+    compteur.textContent = nbArticles;
+
+}
     
     localStorage.setItem("panier", JSON.stringify(panier));
 
