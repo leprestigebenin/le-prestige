@@ -1285,3 +1285,49 @@ footer p{
     color:white;
     cursor:pointer;
 }
+
+.ligne-panier{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+.infos-panier{
+    flex:1;
+}
+
+.quantite-zone{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantite-btn{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:8px;
+    background:#B00000;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.quantite{
+    min-width:25px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.btn-supprimer{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:8px;
+    background:#C62828;
+    color:white;
+    cursor:pointer;
+}
