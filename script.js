@@ -36,7 +36,6 @@ function afficherPanier(){
     if(!liste || !totalElement) return;
 
     liste.innerHTML = "";
-
     total = 0;
 
     panier.forEach((produit,index)=>{
@@ -44,61 +43,59 @@ function afficherPanier(){
         total += produit.prix * produit.quantite;
 
         liste.innerHTML += `
+        <div class="ligne-panier">
 
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid #444;">
-
-            <div>
-
+            <div class="infos-panier">
                 <strong>${produit.nom}</strong><br>
-
-${produit.prix.toLocaleString()} FCFA
-
-<br><br>
-
-<button class="quantite-btn" onclick="diminuerQuantite(${index})">−</button>
-
-<span class="quantite">${produit.quantite}</span>
-
-<button class="quantite-btn" onclick="augmenterQuantite(${index})">+</button>
+                ${produit.prix.toLocaleString()} FCFA
             </div>
 
-<button class="btn-supprimer" onclick="supprimerProduit(${index})">
+            <div class="quantite-zone">
 
+                <button class="quantite-btn"
+                    onclick="diminuerQuantite(${index})">
+                    −
+                </button>
+
+                <span class="quantite">
+                    ${produit.quantite}
+                </span>
+
+                <button class="quantite-btn"
+                    onclick="augmenterQuantite(${index})">
+                    +
+                </button>
+
+            </div>
+
+            <button class="btn-supprimer"
+                onclick="supprimerProduit(${index})">
                 ❌
-
             </button>
 
         </div>
-
         `;
-
     });
 
     if(panier.length===0){
-
-        liste.innerHTML="<p>Votre panier est vide.</p>";
-
+        liste.innerHTML = "<p>Votre panier est vide.</p>";
     }
 
     totalElement.textContent = total.toLocaleString();
+
     if(compteur){
 
-    let nbArticles = 0;
+        let nbArticles = 0;
 
-    panier.forEach(produit => {
+        panier.forEach(produit=>{
+            nbArticles += produit.quantite;
+        });
 
-        nbArticles += produit.quantite;
+        compteur.textContent = nbArticles;
+    }
 
-    });
-
-    compteur.textContent = nbArticles;
-
-}
-    
     localStorage.setItem("panier", JSON.stringify(panier));
-
 }
-
 // =====================================================
 // Supprimer un produit
 // =====================================================
